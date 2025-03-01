@@ -1,5 +1,9 @@
 // Next.js
 import type { Metadata } from "next";
+
+// Clerk Provider
+import { ClerkProvider } from '@clerk/nextjs'
+
 import { Inter,Kanit } from "next/font/google";
 
 // Global css
@@ -29,6 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body className={`${interFont.className} ${kanitFont.variable}`}>
         <ThemeProvider
@@ -42,5 +47,6 @@ export default function RootLayout({
 
       </body>
     </html>
+    </ClerkProvider>
   );
 }
